@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  max_load: MyString
+  current_l: 1
+  job_id: 1
+
+two:
+  name: MyString
+  max_load: MyString
+  current_l: 1
+  job_id: 1
