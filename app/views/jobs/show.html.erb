@@ -1,4 +1,4 @@
-<div id="page_wrapper">
+<div id="post_content">
 	Job Name: 
 	<%= @job.job_name %>
 	<%= tag :br %>
@@ -24,8 +24,7 @@
 	<%= @job.cost %>
 	<%= tag :br %>
 	Created by:
-	<%= current_user.user_name %>
+	<%= @job.user_id %>
 	<%= tag :br %>
-	<%= @job.boat_id %>
-	<%= tag :br %>
+
 </div>

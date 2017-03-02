@@ -9,7 +9,7 @@ class CreateJobs < ActiveRecord::Migration[5.0]
       t.string :job_name
       t.integer :cost
       t.string :job_description
-      t.integer :user_id
+      t.belongs_to  :user, foreign_key: true
       
 
       t.timestamps

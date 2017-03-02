@@ -1,10 +1,8 @@
-<div id="post_content">	
-	<%= content_tag :h1, "Jobs" %>
+<h1 id="header"> All jobs</h1>
 
 	<% @jobs.each do |j| %>
-		Job Name: 
-		<%= j.job_name %>
-		<%= tag :br %>
+		<div class="post_wrapper">
+		<h2 class="title"><%= link_to j.job_name, job_path(j)%></h2>
 		Status: 
 		<%= j.status_job %>
 		<%= tag :br %>
@@ -18,5 +16,7 @@
 		<%= j.destination %>
 		<%= tag :br %>
 		<%= tag :br %>
-	<% end %>
-</div>
+		<p class="date"><%= j.created_at.strftime("%B, %d, %Y") %></p>
+		</div>
+<% end %>
+
