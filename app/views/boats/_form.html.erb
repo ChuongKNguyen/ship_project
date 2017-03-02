@@ -1,0 +1,29 @@
+<h2>Add a Boat!</h2>
+
+
+<%= form_for @boat, html: { multipart: true } do |f| %>
+<p>
+  <%= f.file_field :image %>
+</p>
+
+<p>
+	<%= f.label :name %><br>
+	<%= f.text_field :name %>
+</p>
+
+<p>
+	<%= f.label :max_load %><br>
+	<%= f.select :max_load, ["1-extra-small", "2-small", "3-medium", "4-large", "5-extra-large"] %>
+</p>
+
+<p>
+	<%= f.label :current_l %>
+	<%= f.select :current_l, ["Los Angeles", "Long Beach", "New York/New Jersey", "Seattle/Tacoma", "Savannah"] %>
+</p>
+
+<p>
+<%= f.submit %>
+</p>
+
+<% end %>
+

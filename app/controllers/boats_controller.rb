@@ -20,12 +20,21 @@ class BoatsController < ApplicationController
 	end
 
 	def edit
+		@boat = Boat.find(params[:id])
 	end
 
 	def destroy
 		Boat.find(params[:id]).destroy
 
 		redirect_to :back
+	end
+
+	def update
+		boat = Boat.find(params[:id])
+		boat.update_attributes(boat_params)
+		boat.save
+		redirect_to root_path
+
 	end
 
 	private
