@@ -15,8 +15,7 @@ ActiveRecord::Schema.define(version: 20170301195346) do
   create_table "boats", force: :cascade do |t|
     t.string   "name"
     t.string   "max_load"
-    t.integer  "current_l"
-    t.integer  "job_id"
+    t.string   "current_l"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,13 +24,12 @@ ActiveRecord::Schema.define(version: 20170301195346) do
     t.boolean  "status_job"
     t.integer  "container"
     t.string   "cargo"
-    t.integer  "origin"
-    t.integer  "destination"
+    t.string   "origin"
+    t.string   "destination"
     t.string   "job_name"
     t.integer  "cost"
     t.string   "job_description"
     t.integer  "user_id"
-    t.integer  "boat_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

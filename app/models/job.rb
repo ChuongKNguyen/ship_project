@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
 	# belongs_to :user
-	has_many :boat
+	has_many :boats
 
 
 
