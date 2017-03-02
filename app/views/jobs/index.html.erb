@@ -1,0 +1,22 @@
+<div id="post_content">	
+	<%= content_tag :h1, "Jobs" %>
+
+	<% @jobs.each do |j| %>
+		Job Name: 
+		<%= j.job_name %>
+		<%= tag :br %>
+		Status: 
+		<%= j.status_job %>
+		<%= tag :br %>
+		Description: 
+		<%= j.job_description %>
+		<%= tag :br %>
+		Origin: 
+		<%= j.origin %>
+		<%= tag :br %>
+		Destination
+		<%= j.destination %>
+		<%= tag :br %>
+		<%= tag :br %>
+	<% end %>
+</div>

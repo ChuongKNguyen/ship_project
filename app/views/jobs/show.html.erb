@@ -1,0 +1,31 @@
+<div id="page_wrapper">
+	Job Name: 
+	<%= @job.job_name %>
+	<%= tag :br %>
+	Status: 
+	<%= @job.status_job %>
+	<%= tag :br %>
+	Description: 
+	<%= @job.job_description %>
+	<%= tag :br %>
+	Origin: 
+	<%= @job.origin %>
+	<%= tag :br %>
+	Destination
+	<%= @job.destination %>
+	<%= tag :br %>
+	Container:
+	<%= @job.container %>
+	<%= tag :br %>
+	Cargo:
+	<%= @job.cargo %>
+	<%= tag :br %>
+	Cost:
+	<%= @job.cost %>
+	<%= tag :br %>
+	Created by:
+	<%= current_user.user_name %>
+	<%= tag :br %>
+	<%= @job.boat_id %>
+	<%= tag :br %>
+</div>
