@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 	def index
-		@jobs=Job.all
+		@jobs=Job.all.order('created_at DESC')
 	end	
 
 	def new 
@@ -28,10 +28,16 @@ class JobsController < ApplicationController
 	end
 
 	def update
-		@job = Job.new(job_params)
-		@job.save
-		redirect_to job_path @job
+		job = Job.find(params[:id])
+		job.update_attributes(job_params)
+		job.save
+		redirect_to jobs_path 
   	end  
+
+  	def destroy
+		Job.find(params[:id]).destroy
+		redirect_to :back
+	end
 
 	private
 

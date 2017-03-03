@@ -142,7 +142,17 @@ a {
 				}
 			}
 		}
+		.button {
+			float: right;
+			margin-top: -20px;
+			margin-left: 0.5em;
+			font-size: .8em;
+			.button {
+				
+			}
+		}
 		.date_and_author {
+			font-size: 0.5em;
 			color: #9eafba;
 			margin: .5em 0 0 0;
 		}
@@ -161,8 +171,9 @@ a {
 			line-height: 1.75;
 		}
 		.date_and_author {
+			font-size: 0.5em;
 			color: #9eafba;
-			margin: .5em 0 2em 0;
+			margin: .5em 0 0 0;
 		}
 		#comments {
 			h2 {
@@ -223,7 +234,7 @@ a {
 				font-weight: 500;
 			}
 			p {
-				font-size: 1.1em;
+				font-size: 0.5em;
 				line-height: 1.75;
 			}
 			a {

@@ -5,10 +5,15 @@
 			<% @jobs.each do |j| %>
 				<div class="post_wrapper">
 				<h2 class="title"><%= link_to j.job_name, job_path(j)%></h2>
+				<button class="button"><%= link_to 'Delete', job_path(j), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+				<button class="button"><%= link_to 'Edit', edit_job_path(j) %></button>
+
 				Status: 
 				<%= j.status_job %>
 				<%= tag :br %>
-				<p class="date"><%= j.created_at.strftime("%B, %d, %Y") %></p>
+				<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
+				
+
 				</div>
 		<% end %>
 	</div>
