@@ -1,0 +1,37 @@
+<div id="post_content">
+	<div class="title">
+		<%= @job.job_name %>
+		<%= tag :br %>
+		
+	</div> 
+	<div class="body">
+		<%= tag :br %>
+		Status: 
+		<%= @job.status_job %>
+		<%= tag :br %>
+		Description: 
+		<%= @job.job_description %>
+		<%= tag :br %>
+		Origin: 
+		<%= @job.origin %>
+		<%= tag :br %>
+		Destination
+		<%= @job.destination %>
+		<%= tag :br %>
+		Container:
+		<%= @job.container %>
+		<%= tag :br %>
+		Cargo:
+		<%= @job.cargo %>
+		<%= tag :br %>
+		Cost:
+		<%= @job.cost %>
+		<%= tag :br %>
+		Created by:
+
+		<%= @job.user_id %>
+		<%= tag :br %>
+	</div>
+	
+	<p class="date_and_author"><%= @job.created_at.strftime("%B, %d, %Y") %></p>
+</div>

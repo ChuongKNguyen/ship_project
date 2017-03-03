@@ -7,12 +7,16 @@ class BoatsController < ApplicationController
 
 	def create
 		@boat = Boat.new(boat_params)
-
-		@boat.save
-		redirect_to :back
+		@boat.user_id = current_user.id
+  		if @boat.save 
+			redirect_to boats_path
+		else 
+			render 'new'
+		end
 	end
 
 	def new
+		@boat = Boat.new
 	end
 
 	def show	

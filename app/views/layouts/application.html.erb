@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ShipProject</title>
+    <title>Ship Project</title>
     <%= csrf_meta_tags %>
-
+    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+  	<div id="sidebar">
+  		<div id="logo">
+  			<%= link_to root_path do %>
+  			<%= image_tag "logo_ship.png",  size: "80x80" %>
+  			<% end %>
+  		</div>
+  		<ul>
+  			<li class="category"></li>
+  			<li><%= link_to "Home", root_path %></li>
+  			<li><%= link_to "Jobs", jobs_path %></li>
+  			<li><%= link_to "Boats", boats_path %></li>
+  		</ul>
+
+  		<% if !user_signed_in? %>
+			<p class="sign_in"><%= link_to "Login", new_user_session_path %></p>
+  		<% else %>
+  			<p class="sign_in"><%= current_user.user_name  %></p>  <br />
+  			<!-- <p class="sign_in"><%= current_user.email  %></p> -->
+		<% end %>
+  	</div>
+  	<div id="main_content">
+  		<div id="header">
+  			
+  			
+  			<% if user_signed_in? %>
+				<div class="buttons">
+					<p> 
+					<button class="button"><%= link_to "New Boat", new_boat_path %></button>
+					<button class="button"><%= link_to "New Job", new_job_path %></button>
+					<button class="button"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></button>
+					</p>
+				</div>
+			<% end %>
+		</div>
+    	<%= yield %>
+    </div>
+    
   </body>
 </html>

@@ -1,0 +1,44 @@
+<div id="page_wrapper">
+	<div id="content">
+		<%= form_for @job do |j| %>
+			<%= j.label :Job_Name %>
+			<%= j.text_field :job_name %>
+			<%= tag :br %>
+
+			<%= j.label :Job_description %><%= tag :br %>
+			<%= j.text_field :job_description %>
+			<%= tag :br %>
+
+			<%= j.label :Status %><%= tag :br %>
+			<button class="button_status" id="button-red">Waiting</button>
+    		<button class="button_status" id="button-green">Taken</button>
+			<span class="dot" id="exampleDot"><span class="dot-inner"></span></span>
+			<%= tag :br %>
+			<%= tag :br %>
+			
+			<%= j.label :Container %><%= tag :br %>
+			<%= j.text_field :container %>
+			<%= tag :br %>	
+
+			<%= j.label :Cargo %><%= tag :br %>
+			<%= j.text_field :cargo %>
+			<%= tag :br %>
+
+			<%= j.label :Cost %><%= tag :br %>
+			<%= j.text_field :cost %>
+			<%= tag :br %>
+
+			<%= j.label :Origin %><%= tag :br %>
+			<%= j.text_field :origin %>
+			<%= tag :br %>
+
+			<%= j.label :Destination %><%= tag :br %>
+			<%= j.text_field :destination %>
+			<%= tag :br %>
+			<%= tag :br %>
+			
+			<%= j.submit :update %>
+		<% end %>	
+	</div>
+</div>
+
