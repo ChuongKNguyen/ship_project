@@ -1,3 +1,15 @@
 // Place all the styles related to the boats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.empty-state {
+	text-align: center;
+	& span {
+		font-size: 4em;
+		color: #0074D9;
+	}
+	& h5 {
+		margin-top: 5px;
+		font-size: 1.3em;
+		font-weight: 300;
+	}
+}

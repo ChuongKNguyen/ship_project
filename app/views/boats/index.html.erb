@@ -1,0 +1,35 @@
+<h2>Add a Boat!</h2>
+
+<%= render "form" %>
+
+<h1>Current Boats</h1>
+
+
+<% if @boats.blank? %>
+
+<div class="empty-state">
+	<span class="fa fa-smile-o"></span>
+	<h5>There are currently no boats. Come back later.</h5>
+</div>
+
+<% else %>
+<table>
+	<tr>
+		<th>Boat</th>
+		<th>Name</th>
+		<th>Size</th>
+		<th>Current Location</th>
+	</tr>
+
+	<% @boats.each do |boat| %>
+	<tr>
+		<td><%= image_tag boat.image.url(:medium) %></td>
+		<td><%= boat.name %></td>
+		<td><%= boat.max_load %></td>
+		<td><%= boat.current_l %></td>
+		<td><%= link_to edit_boat_path(boat) do %><i class='fa fa-pencil'></i><% end %></td>
+		<td><%= link_to boat, method: :delete do %><i class='fa fa-trash-o'></i><% end %></td>
+	</tr>
+	<% end %>
+</table>
+<% end %>
