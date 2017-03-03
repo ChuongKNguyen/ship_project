@@ -4,6 +4,7 @@ class CreateBoats < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :max_load
       t.string :current_l
+      t.integer :user_id
 
       t.timestamps
     end
