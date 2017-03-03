@@ -72,9 +72,9 @@ a {
 	}
 	.sign_in {
 		position: absolute;
-		right: 3em;
+		right: 2em;
 		top: 80%;
-		font-size: .8em;
+		font-size: 1.5em;
 		color: #9eafba;
 	}
 }
@@ -127,8 +127,9 @@ a {
 		}
 	}
 	.post_wrapper {
-		padding: 3em;
+		padding: 0.5em 0 0 1em  ;
 		border-bottom: 1px solid #d6dce0;
+		border-top: 1px solid #d6dce0;
 		.title {
 			margin: 0;
 			a {
