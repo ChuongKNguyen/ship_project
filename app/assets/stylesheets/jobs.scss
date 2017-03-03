@@ -1,3 +1,56 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.button_status {
+    padding: 0.2em 1em 0.2em 1em;
+	float: left;
+	margin-top: 0.5em; 
+	margin-right: 1em;
+    // margin: 0.5em;
+}
+
+/** Dot Styles **/
+.dot {
+    overflow: hidden;
+    border-style:solid;
+    border-width: 2px;
+    border-color: #666;
+    padding-top: 6px;
+    padding-left: 6px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0.5em 0.4em 0.2em 0;
+    vertical-align:middle;
+    line-height: 32px;
+    background: #cccccc;
+    -webkit-box-shadow: inset 0 -6px 6px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: inset 0 -6px 6px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: inset -6px -6px 6px rgba(0, 0, 0, 0.3), inset 3px 3px 6px rgba(255, 255, 255, 0.3);
+}
+.dot-inner {
+    background: white;
+    opacity:0.35;
+    filter:alpha(opacity=35);
+    -webkit-box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    overflow: hidden;
+    width: 6px;
+    height: 6px;
+    display: block;
+    line-height: 0;
+}
+.red {
+    background: #990000;
+}
+.green {
+    background: #009900;
+}
+.yellow {
+    background: #999900;
+}

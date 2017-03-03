@@ -5,9 +5,10 @@
 			<% @jobs.each do |j| %>
 				<div class="post_wrapper">
 				<h2 class="title"><%= link_to j.job_name, job_path(j)%></h2>
-				<button class="button"><%= link_to 'Delete', job_path(j), method: :delete, data: { confirm: 'Are you sure?' } %></button>
-				<button class="button"><%= link_to 'Edit', edit_job_path(j) %></button>
-
+				<% if j.user_id == current_user.id %>
+					<button class="button"><%= link_to 'Delete', job_path(j), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+					<button class="button"><%= link_to 'Edit', edit_job_path(j) %></button>
+				<% end %>
 				Status: 
 				<%= j.status_job %>
 				<%= tag :br %>

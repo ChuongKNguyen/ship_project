@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170301195346) do
     t.string   "name"
     t.string   "max_load"
     t.string   "current_l"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

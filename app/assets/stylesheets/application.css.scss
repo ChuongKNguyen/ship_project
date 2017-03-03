@@ -71,7 +71,9 @@ a {
 		}
 	}
 	.sign_in {
-		position: absolute;
+		/*position: absolute;*/
+		margin-top: 23em;
+		text-align: center;
 		right: 2em;
 		top: 80%;
 		font-size: 1.5em;
@@ -234,7 +236,7 @@ a {
 				font-weight: 500;
 			}
 			p {
-				font-size: 0.5em;
+				font-size: 1em;
 				line-height: 1.75;
 			}
 			a {
