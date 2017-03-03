@@ -2,6 +2,14 @@
 
 <h1>Current Boats</h1>
 
+
+<% if @boats.blank? %>
+
+<div class="empty-state">
+	<h5>There are currently no boats available. Come back later.</h5>
+</div>
+
+<% else %>
 <table>
 	<tr>
 		<th>Boat</th>
@@ -16,9 +24,9 @@
 		<td><%= boat.name %></td>
 		<td><%= boat.max_load %></td>
 		<td><%= boat.current_l %></td>
-		<td><%= link_to 'Description', boat_path(boat) %></td>
 		<td><%= link_to 'Edit', edit_boat_path(boat) %></td>
 		<td><%= link_to 'Delete', boat, method: :delete %></td>
 	</tr>
 	<% end %>
 </table>
+<% end %>
