@@ -13,3 +13,45 @@
 		font-weight: 300;
 	}
 }
+
+table {
+	width: 100%;
+	& thead {
+		font-size: 0.8em;
+		letter-spacing: 1px;
+		& th {
+			padding-bottom: 5px;
+			border-bottom: 1px solid #e5e5e5;
+		}
+		& tr:first-child {
+			text-align: left;
+		}
+		& th:nth-child(2) {
+			text-align: center;
+		}
+		& th:last-child {
+			text-align: right;
+		}
+	}
+	& tbody {
+		& tr {
+			& td:first-child {
+				text-align: left;
+			}
+			& td:nth-child(2) {
+				text-align: center;
+				& a {
+					color: #02C8A7;
+					display: inline-block;
+					margin-left: 5px;
+				}
+			}
+			& td:last-child {
+				text-align: right;
+			}
+			& td {
+				padding: 10px;
+			}
+		}
+	}
+}
