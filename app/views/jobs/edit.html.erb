@@ -10,9 +10,10 @@
 			<%= tag :br %>
 
 			<%= j.label :Status %><%= tag :br %>
-			<button class="button_status" id="button-red">Waiting</button>
-    		<button class="button_status" id="button-green">Taken</button>
-			<span class="dot" id="exampleDot"><span class="dot-inner"></span></span>
+			<%= select_tag(:status_job, options_for_select([["Waiting", false], ['Taken', true]], :selected => @job.status_job)) %>
+<!-- 
+			<%= j.check_box(:status_job, {}, "True", "False") %>
+			<span class="dot" id="exampleDot"><span class="dot-inner"></span></span> -->
 			<%= tag :br %>
 			<%= tag :br %>
 			
