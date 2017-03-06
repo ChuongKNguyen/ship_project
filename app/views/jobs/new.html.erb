@@ -1,5 +1,6 @@
 <div id="page_wrapper">
 	<div id="content">
+		<%= flash[:notice] if flash[:notice] %>
 		<%= form_for @job do |j| %>
 			<%= j.label :Job_Name %>
 			<%= j.text_field :job_name %>
@@ -10,8 +11,12 @@
 			<%= tag :br %>
 
 			<%= j.label :Status %><%= tag :br %>
-			<span class="dot" id="exampleDot"><span class="dot-inner"></span></span>
+			<%= select_tag(:status_job, options_for_select([["Waiting", false], ['Taken', true]], :selected => @job.status_job)) %>
 
+
+			<!-- <span class="dot" id="exampleDot"><span class="dot-inner"></span></span> -->
+			<%= tag :br %>
+			<%= tag :br %>
 			<%= j.label :Container %><%= tag :br %>
 			<%= j.text_field :container %>
 			<%= tag :br %>	

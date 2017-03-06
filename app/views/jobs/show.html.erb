@@ -27,10 +27,23 @@
 		Cost:
 		<%= @job.cost %>
 		<%= tag :br %>
+		Assign Boat: 
+		<% @boats.each do |boat| %>
+			<%= form_for @boatjob, html: { multipart: true } do |f| %>
+				<%= f.hidden_field :boat_id, value: boat.id %>
+				<%= f.hidden_field :job_id, value: @job.id %>
+				<%= f.submit boat.name%>
+			<% end %>			
+		<% end %>
+
+
+		<%= tag :br %>
 		Created by:
 
 		<%= @job.user_id %>
 		<%= tag :br %>
+
+
 	</div>
 	
 	<p class="date_and_author"><%= @job.created_at.strftime("%B, %d, %Y") %></p>

@@ -1,6 +1,7 @@
 <div id="page_wrapper">
 	<div id="content">
 		<h1> All jobs</h1>
+
 		<% if @boats.blank? %>
 
 		<div class="empty-state">
@@ -22,8 +23,8 @@
 			<%= tag :br %>
 			<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
 			
-
 		</div>
+
 		<% end %>
 	</div>
 </div>
