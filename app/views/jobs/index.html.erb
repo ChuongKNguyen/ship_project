@@ -14,8 +14,14 @@
 				<%= j.status_job %>
 				<%= tag :br %>
 				<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
-				
-
+				Assign to: 
+				<%= j.id %>
+				<%= tag :br %>
+				<% @boatjob.each do |boatjob| %>
+					<% if boatjob.job_id == j.id %>
+						<%= boatjob.boat_id%>
+					<% end %>
+				<% end %>
 				</div>
 		<% end %>
 	</div>
