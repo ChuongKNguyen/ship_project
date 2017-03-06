@@ -8,6 +8,7 @@
 				<% if j.user_id == current_user.id %>
 					<button class="button"><%= link_to 'Delete', job_path(j), method: :delete, data: { confirm: 'Are you sure?' } %></button>
 					<button class="button"><%= link_to 'Edit', edit_job_path(j) %></button>
+					<button class="button"><%= link_to 'Assign boat', job_path(j) %></button>
 				<% end %>
 				Status: 
 				<%= j.status_job %>
