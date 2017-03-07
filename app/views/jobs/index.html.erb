@@ -13,15 +13,21 @@
 				Status: 
 				<%= j.status_job %>
 				<%= tag :br %>
-				<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
-				Assign to: 
-				<%= j.id %>
+
+				Job id : <%=j.id%>
 				<%= tag :br %>
+				Assigned Boat: 
 				<% @boatjob.each do |boatjob| %>
-					<% if boatjob.job_id == j.id %>
-						<%= boatjob.boat_id%>
+					
+					<% if j.id == boatjob.job_id  %>
+						<li>
+						<%= Boat.where(["id = ? ", boatjob.boat_id]).first.name %>
+						</li>
 					<% end %>
 				<% end %>
+				<%= tag :br %>
+				<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
+				<%= tag :br %>
 				</div>
 		<% end %>
 	</div>
