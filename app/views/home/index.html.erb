@@ -5,22 +5,47 @@
 			<p>Thank you for choosing Ship' Service!</p>
 			<p>In order to use the whole functionality, please sign-in!</p>
 			<button class="button"><%= link_to "Login", new_user_session_path %></button>
-		<% else %>	
-			<h1>Your Jobs</h1>
-			<% @jobs.each do |j| %>
-				<% if j.user_id == current_user.id %>
-					<div class="post_wrapper">
-					<h2 class="title"><%= link_to j.job_name, job_path(j)%></h2>
-					<button class="button"><%= link_to 'Delete', job_path(j), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+		<% else %>
+			<% if @jobs.blank? %>
 
-					<button class="button"><%= link_to 'Edit', edit_job_path(j) %></button>
-					<button class="button"><%= link_to 'Assign boat', job_path(j) %></button>
-					Status: 
-					<%= j.status_job %>
-					<%= tag :br %>
-					<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
+				<div class="empty-state">
+					<span class="fa fa-smile-o"></span>
+					<h5>There are currently no jobs. Create One.</h5>
+				</div>
 
-					</div>
+			<% else %>	
+				<h1>Your Jobs</h1>
+				<% @jobs.each do |j| %>
+					<% if j.user_id == current_user.id %>
+						<div class="post_wrapper">
+						<h2 class="title"><%= link_to j.job_name, job_path(j)%></h2>
+						<button class="button"><%= link_to 'Delete', job_path(j), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+
+						<button class="button"><%= link_to 'Edit', edit_job_path(j) %></button>
+						<button class="button"><%= link_to 'Assign boat', assign_jobs_path(j) %></button>
+						Status: 
+						<%= j.status_job %>
+						<%= tag :br %>
+						Job id : <%=j.id%>
+						<%= tag :br %>
+						Assigned Boat: 
+						<% @boatjob.each do |boatjob| %>
+							
+							<% if j.id == boatjob.job_id  %>
+								<li>
+								<%= Boat.where(["id = ? ", boatjob.boat_id]).first.name %>
+								
+
+								<%= link_to boatsjob_path(boatjob), method: :delete do %><i class='fa fa-trash-o'></i><% end %>
+								</li>
+							<% end %>
+						<% end %>
+						<%= tag :br %>
+						<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
+						<%= tag :br %>
+
+						</div>
+					<% end %>
 				<% end %>
 			<% end %>	
 		<% end %>

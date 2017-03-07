@@ -1,0 +1,23 @@
+<div id="page_wrapper">
+	<div id="content">
+		<h1>Current Boats</h1>
+		<% if @boats.blank? %>
+
+			<div class="empty-state">
+				<span class="fa fa-smile-o"></span>
+				<h5>There are currently no boats. Come back later.</h5>
+			</div>
+
+		<% else %>
+			Pick your Boat: 
+			<% @boats.each do |boat| %>
+			<%= form_for @boatjob, url: boatsjobs_path(boat), method: :post, html: { multipart: true } do |f| %>
+				<%= f.hidden_field :boat_id, value: boat.id %>
+				<%= f.hidden_field :job_id, value: @job.id %>
+				<%= f.submit boat.name%>
+			<% end %>			
+		<% end %>
+
+		<% end %>
+	</div>
+</div>
