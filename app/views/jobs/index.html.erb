@@ -1,7 +1,14 @@
 <div id="page_wrapper">
 	<div id="content">
 		<h1> All jobs</h1>
+		<% if @boats.blank? %>
 
+			<div class="empty-state">
+				<span class="fa fa-smile-o"></span>
+				<h5>There are currently no jobs. Come back later.</h5>
+			</div>
+
+		<% else %>
 			<% @jobs.each do |j| %>
 				<div class="post_wrapper">
 				<h2 class="title"><%= link_to j.job_name, job_path(j)%></h2>
@@ -28,7 +35,7 @@
 				<%= tag :br %>
 				<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
 				<%= tag :br %>
-				</div>
 		<% end %>
 	</div>
 </div>
+<% end %>
