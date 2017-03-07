@@ -12,6 +12,11 @@ class BoatsjobsController < ApplicationController
 
 	end 
 
+	def destroy
+		BoatJob.find(params[:id]).destroy
+
+		redirect_to jobs_path
+	end
 	private
 
 	def boat_job_params

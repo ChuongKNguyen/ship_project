@@ -34,6 +34,9 @@
 							<% if j.id == boatjob.job_id  %>
 								<li>
 								<%= Boat.where(["id = ? ", boatjob.boat_id]).first.name %>
+								
+
+								<%= link_to boatsjob_path(boatjob), method: :delete do %><i class='fa fa-trash-o'></i><% end %>
 								</li>
 							<% end %>
 						<% end %>
