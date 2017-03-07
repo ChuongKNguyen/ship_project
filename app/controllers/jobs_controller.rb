@@ -53,6 +53,13 @@ class JobsController < ApplicationController
 		redirect_to :back
 	end
 
+	def assign
+		@job = Job.find(params[:id])
+		@user = current_user 
+		@boats = Boat.all
+		@boatjob = BoatJob.new
+	end 
+
 	private
 
 	def job_params

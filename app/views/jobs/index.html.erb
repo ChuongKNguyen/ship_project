@@ -1,11 +1,11 @@
 <div id="page_wrapper">
 	<div id="content">
 		<h1> All jobs</h1>
-		<% if @boats.blank? %>
+		<% if @jobs.blank? %>
 
 			<div class="empty-state">
 				<span class="fa fa-smile-o"></span>
-				<h5>There are currently no jobs. Come back later.</h5>
+				<h5>There are currently no jobs. Create One.</h5>
 			</div>
 
 		<% else %>
@@ -15,7 +15,7 @@
 				<% if j.user_id == current_user.id %>
 					<button class="button"><%= link_to 'Delete', job_path(j), method: :delete, data: { confirm: 'Are you sure?' } %></button>
 					<button class="button"><%= link_to 'Edit', edit_job_path(j) %></button>
-					<button class="button"><%= link_to 'Assign boat', job_path(j) %></button>
+					<button class="button"><%= link_to 'Assign boat', assign_jobs_path(j) %></button>
 				<% end %>
 				Status: 
 				<%= j.status_job %>
@@ -35,6 +35,7 @@
 				<%= tag :br %>
 				<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
 				<%= tag :br %>
+				</div>
 		<% end %>
 	</div>
 </div>
