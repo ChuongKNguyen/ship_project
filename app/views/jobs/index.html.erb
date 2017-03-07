@@ -1,30 +1,40 @@
 <div id="page_wrapper">
 	<div id="content">
 		<h1> All jobs</h1>
-
 		<% if @boats.blank? %>
 
-		<div class="empty-state">
-			<span class="fa fa-smile-o"></span>
-			<h5>There are currently no jobs. Come back later.</h5>
-		</div>
+			<div class="empty-state">
+				<span class="fa fa-smile-o"></span>
+				<h5>There are currently no jobs. Come back later.</h5>
+			</div>
 
 		<% else %>
+			<% @jobs.each do |j| %>
+				<div class="post_wrapper">
+				<h2 class="title"><%= link_to j.job_name, job_path(j)%></h2>
+				<% if j.user_id == current_user.id %>
+					<button class="button"><%= link_to 'Delete', job_path(j), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+					<button class="button"><%= link_to 'Edit', edit_job_path(j) %></button>
+					<button class="button"><%= link_to 'Assign boat', job_path(j) %></button>
+				<% end %>
+				Status: 
+				<%= j.status_job %>
+				<%= tag :br %>
 
-		<% @jobs.each do |j| %>
-		<div class="post_wrapper">
-			<h2 class="title"><%= link_to j.job_name, job_path(j)%></h2>
-			<% if j.user_id == current_user.id %>
-			<button class="button"><%= link_to 'Delete', job_path(j), method: :delete, data: { confirm: 'Are you sure?' } %></button>
-			<button class="button"><%= link_to 'Edit', edit_job_path(j) %></button>
-			<% end %>
-			Status: 
-			<%= j.status_job %>
-			<%= tag :br %>
-			<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
-			
-		</div>
-
+				Job id : <%=j.id%>
+				<%= tag :br %>
+				Assigned Boat: 
+				<% @boatjob.each do |boatjob| %>
+					
+					<% if j.id == boatjob.job_id  %>
+						<li>
+						<%= Boat.where(["id = ? ", boatjob.boat_id]).first.name %>
+						</li>
+					<% end %>
+				<% end %>
+				<%= tag :br %>
+				<p class="date_and_author"><%= j.created_at.strftime("%B, %d, %Y") %></p>
+				<%= tag :br %>
 		<% end %>
 	</div>
 </div>

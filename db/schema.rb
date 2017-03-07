@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20170306163101) do
 
   create_table "boat_jobs", force: :cascade do |t|
-    t.string   "boat_id"
-    t.string   "job_id"
+    t.integer  "boat_id"
+    t.integer  "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

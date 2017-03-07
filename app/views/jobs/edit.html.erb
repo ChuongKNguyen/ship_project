@@ -37,7 +37,7 @@
 			<%= j.text_field :destination %>
 			<%= tag :br %>
 			<%= tag :br %>
-			
+			<button class="button"><%= link_to 'Assign boat', job_path(j) %></button>
 			<%= j.submit :update %>
 		<% end %>	
 	</div>

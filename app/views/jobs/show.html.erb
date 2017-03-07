@@ -29,7 +29,7 @@
 		<%= tag :br %>
 		Assign Boat: 
 		<% @boats.each do |boat| %>
-			<%= form_for @boatjob, html: { multipart: true } do |f| %>
+			<%= form_for @boatjob, url: boatsjobs_path(boat), method: :post, html: { multipart: true } do |f| %>
 				<%= f.hidden_field :boat_id, value: boat.id %>
 				<%= f.hidden_field :job_id, value: @job.id %>
 				<%= f.submit boat.name%>
